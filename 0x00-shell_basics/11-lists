@@ -1,2 +1,2 @@
 #!/bin/bash
-Chmod -R +X .
+ls -la . .. /boot
