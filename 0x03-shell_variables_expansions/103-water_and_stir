@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "ibase=water; $WATER+stir;$STIR" | dc | tr -d '\\' | xargs printf "%x\n" | tr '[:lower:]' '[:upper:]' | sed 's/^[ \t]*//'
+echo $(printf %o $(($((5#$(echo $WATER | tr 'water' '01234'))) + $((5# '01234'))))) | tr '01234567' "bestchol"
