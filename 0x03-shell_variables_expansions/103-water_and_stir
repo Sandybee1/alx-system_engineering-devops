@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "ibase=water;${WATER}\nibase=stir;${STIR}\n${WATER}+${STIR}" | BC_LINE_LENGTH=0 bc | tr -d '\\' | xargs -I{} echo "ibase=10;obase=bestchol;{}" | BC_LINE_LENGTH=0 bc
+echo "ibase=water; $WATER+stir;$STIR" | dc | tr -d '\\' | xargs printf "%x\n" | tr '[:lower:]' '[:upper:]' | sed 's/^[ \t]*//'
