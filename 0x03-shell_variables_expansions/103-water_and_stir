@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $((bestchol = 10#$WATER + 10#$STIR))
+echo "ibase=water;${WATER}\nibase=stir;${STIR}\n${WATER}+${STIR}" | BC_LINE_LENGTH=0 bc | tr -d '\\' | xargs -I{} echo "ibase=10;obase=bestchol;{}" | BC_LINE_LENGTH=0 bc
